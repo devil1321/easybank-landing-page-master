@@ -1,0 +1,164 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300&display=swap');
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    line-height: 1.3;
+    font-family: 'Public Sans';
+    color: $grayishBlue;
+    font-size: $font-med;
+    font-weight: 300;
+    min-height: 300vh;
+    &.noscroll {
+        overflow: hidden;
+    }
+    @include breakpoint-up(large) {
+        font-size: $font-med;
+    }
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 300;
+    line-height: 1.15;
+    color: $darkBlue;
+    margin-top: 0;
+}
+
+h1 {
+    font-weight: 300;
+    font-size: 2.31rem;
+    line-height: 1.15;
+    color: $darkBlue;
+    margin-bottom: 1.5rem;
+    @include breakpoint-up(large) {
+        font-size: $font-xlg;
+    }
+}
+
+h2 {
+    font-size: 1.875rem;
+    margin-bottom: 1.526rem;
+    @include breakpoint-up(large) {
+        font-size: 2.25rem;
+        margin-bottom: 2.25rem;
+    }
+}
+
+p {
+    line-height: 1.5;
+    margin-bottom: 2.25rem;
+}
+
+a,
+a:visited,
+a:hover {
+    text-decoration: none;
+    font-weight: 400;
+}
+
+.container {
+    &--pall {
+        padding-right: 1.5rem;
+        padding-left: 1.5rem;
+        padding-top: 4.375rem;
+        padding-bottom: 4.375rem;
+        @include breakpoint-up(large) {
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+        }
+    }
+    &--px {
+        padding-right: 1.5rem;
+        padding-left: 1.5rem;
+        @include breakpoint-up(large) {
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+        }
+    }
+    &--py {
+        padding-top: 4.375rem;
+        padding-bottom: 4.375rem;
+        @include breakpoint-up(large) {
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+        }
+    }
+    &--pt {
+        padding-top: 4.375rem;
+        @include breakpoint-up(large) {
+            padding-top: 6rem;
+        }
+    }
+    &--pr {
+        padding-right: 1.5rem;
+    }
+    &--pb {
+        padding-bottom: 4.375rem;
+        @include breakpoint-up(large) {
+            padding-bottom: 6rem;
+        }
+    }
+    &--pl {
+        padding-left: 1.5rem;
+    }
+    max-width: 69.375rem;
+    margin: 0 auto;
+}
+
+// flexbox
+.flex {
+    display: flex;
+    &-jc-sb {
+        justify-content: space-between;
+    }
+    &-jc-c {
+        justify-content: center;
+    }
+    &-ai-c {
+        align-items: center;
+    }
+}
+
+// buttons
+.button {
+    display: inline-block;
+    padding: 0.875rem 2.1875rem;
+    border-radius: 50px;
+    background: linear-gradient(to right, $limeGreen, $brightCyan);
+    border: 0px;
+    font-size: $font-sm;
+    font-weight: 700;
+    color: $white;
+    transition: opacity 300ms ease-in-out;
+    cursor: pointer;
+    &:hover {
+        opacity: 0.75;
+        font-weight: 700;
+    }
+}
+
+// visisbility
+.hide-for-mobile {
+    @include breakpoint-down(medium) {
+        display: none;
+    }
+}
+
+.hide-for-desktop {
+    @include breakpoint-up(large) {
+        display: none;
+    }
+}
